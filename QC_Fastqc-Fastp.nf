@@ -4,12 +4,12 @@ nextflow.enable.dsl=2
 // ────────────────────────────────
 // PARAMETERS
 // ────────────────────────────────
-params.raw_glob     = "/home/cm/Mutanex/NEW_SRR25739478/Automate/Back_Ref/00_raw/*_R{1,2}.fastq.gz"
-params.fastqc_out   = "/home/cm/Mutanex/NEW_SRR25739478/Automate/01_QC/raw_read_qc/fastqc_reports"
-params.fastqc_img   = "/home/cm/tools/fastqc_0.12.1.sif"
-params.fastp_img    = "/home/cm/tools/fastp_0.23.4.sif"    // change if needed
-params.min_length   = 50
-params.deliverables = "/home/cm/Mutanex/NEW_SRR25739478/Automate/02_Processedreads"
+params.raw_glob     = "{Path to your Raw data}/00_raw/*_R{1,2}.fastq.gz"                          # Path for Raw data
+params.fastqc_out   = "{Path to your Deliverables directory}/01_QC/raw_read_qc/fastqc_reports"    # Path for QC report
+params.fastqc_img   = "/home/cm/tools/fastqc_0.12.1.sif"                                          # Docker Image OR Singularity container path of fastqc
+params.fastp_img    = "/home/cm/tools/fastp_0.23.4.sif"    // change if needed                    # Docker Image OR Singularity container path of Fastp
+params.min_length   = 50                                                                          # Minimum lenth for fastp trim 
+params.deliverables = "{Path to your Deliverables directory}/02_Processedreads"                   # Path of Processed data
 
 // ────────────────────────────────
 // CHANNEL: PAIR R1/R2
